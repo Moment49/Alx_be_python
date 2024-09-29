@@ -1,3 +1,5 @@
+import re
+
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5/9
 CELSIUS_TO_FAHRENHEIT_FACTOR = 9/5
 
@@ -14,8 +16,8 @@ def convert_to_fahrenheit(celsius):
 
 temp = input("Enter the temperature to convert: ")
 
-# TRY AND EXCEPT BLOCK
-try:
+
+if re.match(r'^-?\d+(\.\d+)?$', temp):
     temp = float(temp)
     unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ")
     if unit.lower() == "f":
@@ -24,5 +26,5 @@ try:
         convert_to_fahrenheit(temp)
     else:
         print("Not a valid conversion unit")
-except ValueError:
+else:
     print("Invalid temperature. Please enter a numeric value")
