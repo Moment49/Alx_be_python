@@ -1,4 +1,4 @@
-def perform_operation(num1:float, num2:float, operation:str):
+def perform_operation(num1, num2, operation):
     """"A function to perform an arithmetic operation based on the type of operation selected"""
     if operation == "add":
         return num1 + num2
