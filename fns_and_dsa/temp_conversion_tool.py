@@ -17,7 +17,8 @@ def convert_to_fahrenheit(celsius):
 temp = input("Enter the temperature to convert: ")
 
 
-if re.match(r'^-?\d+(\.\d+)?$', temp):
+
+try:
     temp = float(temp)
     unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ")
     if unit.lower() == "f":
@@ -26,5 +27,9 @@ if re.match(r'^-?\d+(\.\d+)?$', temp):
         convert_to_fahrenheit(temp)
     else:
         print("Not a valid conversion unit")
-else:
+except ValueError:
     print(["Invalid temperature. Please enter a numeric value."])
+
+
+
+
