@@ -8,10 +8,13 @@ class Book:
         if self.title and self._is_checked_out == False:
             self._is_checked_out = True
             return self._is_checked_out
-        elif self.title and self._is_checked_out == True:
+        
+        
+    def return_book(self):
+        if self.title and self._is_checked_out == True:
             self._is_checked_out = False
             return self._is_checked_out
-    
+        
     def __repr__(self):
         return f"title: {self.title} author: {self.author}"
 
@@ -35,13 +38,12 @@ class Library():
                     book_pop = self._books.pop(bk_idx)
                     # move books to unavialable list
                     self._unavaliable_books.append(book_pop)
-                   
-                
+                         
     def return_book(self, title):
         if self._unavaliable_books:
             for bk_idx in range(len(self._unavaliable_books)):
                 if self._unavaliable_books[bk_idx].title == title:
-                    self._unavaliable_books[bk_idx].check_a_book_out()
+                    self._unavaliable_books[bk_idx].return_book()
                     book_pop = self._unavaliable_books.pop(bk_idx)
 
                     # Adding book back thus making it avaliable
