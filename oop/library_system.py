@@ -35,5 +35,5 @@ class Library:
     
     def list_books(self):
         for book in self.books:
-            print(f"{book}")
+            print(book)
     
