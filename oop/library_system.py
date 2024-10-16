@@ -3,7 +3,7 @@ class Book:
         self.title = title
         self.author = author
     
-    def __repr__(self) -> str:
+    def __str__(self):
         return f"{self.title} {self.author}"
 
 
