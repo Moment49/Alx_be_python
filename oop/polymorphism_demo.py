@@ -2,7 +2,7 @@ import math
 
 class Shape:
     def area(self):
-        raise NotImplementedError("Area must be overriddent by the child classes")
+        raise NotImplementedError("Area must be overridden by the child classes")
 
 
 class Rectangle(Shape):
