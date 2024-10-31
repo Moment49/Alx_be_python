@@ -1,0 +1,17 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ALL BOOKS</h1>
+    {% for book in books %}
+    <h2>{{ book }}</h2>
+    {% endfor %}
+    <img src="{% static 'library/book1.jpg' %}" width=150px   alt="None" />
+</body>
+</html>
